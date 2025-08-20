@@ -1,0 +1,13 @@
+.difficulty-card {
+  max-width: 700px;
+  width: 100%;
+  background-color: antiquewhite;
+  color: black;
+  font-size: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.difficulty-card:hover {
+  background-color: greenyellow;
+}
