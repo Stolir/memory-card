@@ -2,6 +2,7 @@ import "../styles/Layout.css"
 import { useState } from "react"
 import StartScreen from "./StartScreen"
 import DifficultyScreen from "./DifficultyScreen"
+import GameScreen from "./GameScreen"
 
 function Layout() {
 
@@ -21,8 +22,12 @@ function Layout() {
         currentScreen={screens[currentScreen] === 'start'}
       />
       <DifficultyScreen
-        handleClick={handleStart} 
+        handleStart={handleStart}
+        handleSetDifficulty={setCardCount}
         currentScreen={screens[currentScreen] === 'difficulty'}
+      />
+      <GameScreen 
+
       />
     </>
   )

@@ -1,7 +1,7 @@
 import DifficultyCard from "./DifficultyCard"
 import "../styles/DifficultyScreen.css"
 
-function DifficultyScreen({ currentScreen, handleClick }) {
+function DifficultyScreen({ currentScreen, handleStart, handleSetDifficulty }) {
 
   const difficulties = [
     {
@@ -21,12 +21,23 @@ function DifficultyScreen({ currentScreen, handleClick }) {
     },
   ]
 
+  const handleClick = (cardCount) => {
+    handleStart()
+    handleSetDifficulty(cardCount)
+  }
+
   return (
     <div className={`difficulty-screen ${currentScreen ? '' : 'hidden'}`}>
       <h1>How good is your memory?</h1>
       <div className="difficulty-cards">
         {difficulties.map(difficulty => (
-          <DifficultyCard key={difficulty.id} handleClick={handleClick}>{difficulty.name}</DifficultyCard>
+          <DifficultyCard 
+          key={difficulty.id} 
+          handleClick={() => {
+            handleClick(difficulty.cardCount)
+          }}>
+            {difficulty.name}
+          </DifficultyCard>
         ))}
       </div>
     </div>
