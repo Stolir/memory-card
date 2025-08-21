@@ -1,4 +1,3 @@
-import "../styles/Layout.css"
 import { useState } from "react"
 import StartScreen from "./StartScreen"
 import DifficultyScreen from "./DifficultyScreen"
@@ -22,7 +21,7 @@ function Layout() {
       />
     )
   }
-  
+
   if (screens[currentScreen] === 'difficulty') {
     return (
       <DifficultyScreen
