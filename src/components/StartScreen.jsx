@@ -1,8 +1,8 @@
 import "../styles/StartScreen.css"
 
-function StartScreen({ handleClick, currentScreen }) {
+function StartScreen({ handleClick }) {
   return (
-    <div className={`start-screen ${currentScreen ? '' : 'hidden'}`}>
+    <div className={`start-screen`}>
         <div className="game-title">Memory Cards</div>
         <button 
           className="start-button"

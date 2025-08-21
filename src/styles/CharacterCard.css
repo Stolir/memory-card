@@ -12,3 +12,11 @@
   margin: auto;
   padding: 0.3rem;
 }
+
+.character-card:hover {
+  cursor: pointer;
+}
+
+.character-card:hover p {
+  color: green;
+}

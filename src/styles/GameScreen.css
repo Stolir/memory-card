@@ -35,6 +35,41 @@
   align-content: center;
 }
 
+.game-over-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 80vh;
+  font-family: 'Schoolbell';
+  gap: 2rem;
+}
+
+.game-over-screen .controls {
+  display: flex; 
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.controls button {
+  padding: 1rem;
+}
+
+.controls button:hover {
+  color: green;
+}
+
+.status-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Schoolbell', sans-serif;
+  color: white;
+  height: 80vh;
+}
+
 .hidden {
   display: none;
 }
