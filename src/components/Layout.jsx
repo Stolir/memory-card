@@ -7,13 +7,13 @@ import GameScreen from "./GameScreen"
 function Layout() {
 
   const screens = ['start', 'difficulty', 'game']
-  const [currentScreen, setCurrentScreen] = useState(0)
+  const [currentScreen, setCurrentScreen] = useState(2)
 
   const handleStart = () => {
     setCurrentScreen(currentScreen + 1)
   }
 
-  const [cardCount, setCardCount] = useState(0)
+  const [cardCount, setCardCount] = useState(12)
 
   return (
     <>
@@ -27,7 +27,8 @@ function Layout() {
         currentScreen={screens[currentScreen] === 'difficulty'}
       />
       <GameScreen 
-
+        cardCount={cardCount}
+        currentScreen={screens[currentScreen] === 'game'}
       />
     </>
   )

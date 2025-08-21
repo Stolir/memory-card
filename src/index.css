@@ -56,7 +56,15 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-#root {
+body {
+  background-color: black;
+}
+
+/* #root {
   height: 100vh;
   background-color: black;
+} */
+
+button:hover {
+  cursor: pointer;
 }
