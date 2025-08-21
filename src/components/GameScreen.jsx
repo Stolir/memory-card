@@ -24,11 +24,17 @@ function GameScreen({ cardCount, handleScreenSelection }) {
     console.log([...clickedCharacters, newChar])
     if (clickedCharacters.includes(newChar)) {
       setGameStatus({gameOver: true, gameWon: false})
-      personalBest < clickedCharacters.length && setPersonalBest(clickedCharacters.length)
+      if (personalBest < clickedCharacters.length) {
+        setPersonalBest(clickedCharacters.length)
+      }
+      return;
     }
     if (clickedCharacters.length === cardCount - 1 && !clickedCharacters.includes(newChar)) {
       setGameStatus({gameOver: true, gameWon: true})
-      personalBest < clickedCharacters.length + 1 && setPersonalBest(clickedCharacters.length + 1)
+      if (personalBest < clickedCharacters.length + 1) {
+        setPersonalBest(clickedCharacters.length + 1)
+      } 
+      return;
     } else {
       const newArray = shuffleArray(characterData)
       setCharacterData(newArray)
@@ -40,14 +46,12 @@ function GameScreen({ cardCount, handleScreenSelection }) {
     setGameStatus({gameOver: false, gameWon: false});
     setClickedCharacters([])
     if (option === 'retrySame') {
-      handleScreenSelection(2);
       const newArray = shuffleArray(characterData)
       setCharacterData(newArray)
     }
     if (option === 'retryNew') {
       setIsLoading(true)
       setCharacterIds(generateRandomNumberArray(cardCount, MAX));
-      handleScreenSelection(2);
     }
     if (option === 'difficulty') {
       handleScreenSelection(1);
@@ -113,6 +117,15 @@ function GameScreen({ cardCount, handleScreenSelection }) {
             handleClick={handleCharClick}
           />
         ))}
+      </div>
+      <div className='controls'>
+        <button onClick={() => {
+          handleScreenSelection(0)
+        }}>Main Menu</button>
+
+        <button onClick={() => {
+          handleScreenSelection(1)
+        }}>Difficulty Selection</button>
       </div>
     </div>
   )

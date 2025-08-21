@@ -70,6 +70,13 @@
   height: 80vh;
 }
 
+.game-screen .controls {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
 .hidden {
   display: none;
 }
